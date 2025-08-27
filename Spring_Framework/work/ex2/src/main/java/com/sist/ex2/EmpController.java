@@ -21,4 +21,13 @@ public class EmpController {
 
         return mv;
     }
+
+    @RequestMapping("/findDept")
+    public ModelAndView findDept(){
+        ModelAndView mv = new ModelAndView("findD");/*findD.jsp*/
+        EmpVO[] ar = EmpDAO.findDept("10");
+        mv.addObject("ar",ar);
+
+        return mv;
+    }
 }

@@ -6,4 +6,7 @@
     <select id="total" resultType="mybatis.vo.EmpVO">
         select * from emp
     </select>
+    <select id="deptSearch" resultType="mybatis.vo.EmpVO" parameterType="String">
+        select * from emp where deptno =#{n}
+    </select>
 </mapper>

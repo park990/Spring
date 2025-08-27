@@ -29,5 +29,14 @@ public class EmpDAO {
 
         return ar;
     }
+    public EmpVO[] findDept(String dept){
+        List<EmpVO> list= ss.selectList("emp.deptSearch",dept);
+        EmpVO[] deptar=null;
+        if(list !=null) {
+            deptar = new EmpVO[list.size()];
+            list.toArray(deptar);
+        }
+        return deptar;
+    }
 
 }
