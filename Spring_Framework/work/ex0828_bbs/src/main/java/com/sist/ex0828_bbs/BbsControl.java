@@ -2,7 +2,9 @@ package com.sist.ex0828_bbs;
 
 import bbs.util.Paging;
 import mybatis.dao.BbsDAO;
+import mybatis.dao.CommDAO;
 import mybatis.vo.BbsVO;
+import mybatis.vo.CommVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +19,9 @@ import java.util.List;
 public class BbsControl {
     @Autowired
     BbsDAO BbsDAO;
+
+    @Autowired
+    CommDAO CommDAO;
 
     @Autowired
     private HttpSession session;
@@ -92,8 +97,17 @@ public class BbsControl {
             }
         mv.addObject("vo", vo);
         }
-
+        mv.addObject("cPage",cPage);
         mv.setViewName("bbs/view");
+        return mv;
+    }
+
+    @RequestMapping(value = "/bbs/addComm",method =RequestMethod.POST)
+    public ModelAndView addCOmm(String b_idx, String cPage, CommVO cvo){
+        ModelAndView mv = new ModelAndView();
+        int cnt = CommDAO.add(cvo.getWriter(), cvo.getContent(), cvo.getPwd(),cvo.getIp(),b_idx);
+        mv.setViewName("redirect:/bbs/viewTest?b_idx=" + b_idx + "&cPage=" + cPage);
+
         return mv;
     }
 }

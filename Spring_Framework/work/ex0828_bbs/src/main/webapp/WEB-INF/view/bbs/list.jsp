@@ -123,7 +123,7 @@
 
                     <c:if test="${p.startPage >= p.pagePerBlock}">
                         <li class="disable">&lt;</li>
-                        <li><a href="/bbs/list?list&cPage=${p.nowPage-p.pagePerBlock}">&lt;</a></li>
+                        <li><a href="/bbs_list?list&cPage=${p.nowPage-p.pagePerBlock}">&lt;</a></li>
                     </c:if>
 
 
@@ -132,12 +132,12 @@
                             <li class="now">${i}</li>
                         </c:if>
                         <c:if test="${p.nowPage!=i}">
-                            <li><a href="/bbs/list?list&cPage=${i}">${i}</a></li>
+                            <li><a href="/bbs_list?list&cPage=${i}">${i}</a></li>
                         </c:if>
                     </c:forEach>
 
                     <c:if test="${p.endPage<p.totalPage}">
-                        <li><a href="/bbs/list?list&cPage=${p.nowPage+p.pagePerBlock}">&gt;</a></li>
+                        <li><a href="/bbs_list?list&cPage=${p.nowPage+p.pagePerBlock}">&gt;</a></li>
                     </c:if>
                     <c:if test="${p.endPage>=p.totalPage}">
                         <li class="disable">&gt;</li>
