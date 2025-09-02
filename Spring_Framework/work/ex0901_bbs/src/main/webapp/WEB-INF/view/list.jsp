@@ -156,7 +156,7 @@
             <c:set var="num" value="${p.totalCount-((p.nowPage-1)*p.numPerPage+k.index)}"/>
             <tr>
                 <td>${num}</td>
-                <td><a href="/bbs/viewTest?bname=BBS&b_idx=${vo.b_idx}&cPage=${p.nowPage}&bname=${bname}">
+                <td><a href="/view?b_idx=${vo.b_idx}&cPage=${p.nowPage}&bname=${bname}">
                         ${vo.subject}
                     <c:if test="${vo.c_list!=null and vo.c_list.size()>0}">
                         <c:out value="(${vo.c_list.size()})"/>

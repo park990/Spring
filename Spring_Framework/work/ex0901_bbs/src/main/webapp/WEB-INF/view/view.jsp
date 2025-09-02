@@ -103,10 +103,10 @@
         </form>
 
         <form name="ff" method="post">
-            <input type="hidden" name="type"/>
+            <input type="hidden" name="bname" value="${bname}"/>
             <input type="hidden" name="f_name"/>
             <input type="hidden" name="b_idx" value="${vo.b_idx}"/>
-            <input type="hidden" name="cPage" value="${cPage}"/>
+            <input type="hidden" name="cPage" value="${param.cPage}"/>
         </form>
 
         <!-- 삭제시 보여주는 팝업창 -->
@@ -136,8 +136,9 @@
 
 <%-- 표현할 vo객체가 존재하지 않는다면 원래 있던 목록 페이지로 이동한다. --%>
 <c:if test="${requestScope.vo eq null}">
-    <c:redirect url="/bbs_list">
-        <c:param name="cPage" value="${cPage}"/>
+    <c:redirect url="/list">
+        <c:param name="cPage" value="${param.cPage}"/>
+        <c:param name="bname" value="${bname}"/>
     </c:redirect>
 </c:if>
 
@@ -155,7 +156,7 @@
     });
 
     function goList() {
-        document.ff.action = "/bbs_list";
+        document.ff.action = "/list";
         document.ff.submit();
     }
     function goDel() {
@@ -169,11 +170,11 @@
     }
 
     function goEdit() {
-        document.ff.action = "/bbs/edit";
+        document.ff.action = "/edit";
         document.ff.submit();
     }
     function down(fname) {
-        document.ff.action = "/bbs/download";
+        document.ff.action = "/download";
         document.ff.f_name.value = fname;
         document.ff.submit();
     }
