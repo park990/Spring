@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sist.ex0905_deptsearch.mapper.DeptMapper">
+    <select id="total" resultType="com.sist.ex0905_deptsearch.vo.DeptVO">
+        select * from dept
+    </select>
+
+    <select id="search" resultType="com.sist.ex0905_deptsearch.vo.DeptVO" parameterType="Map">
+        select * from dept
+        <trim prefix="where">
+            <if test="type==0">
+                deptno=#{value}
+            </if>
+            <if test="type==1">
+                dname like concat ('%',#{value},'%')
+            </if>
+            <if test="type==2">
+                loc_code=#{value}
+            </if>
+        </trim>
+    </select>
+</mapper>
