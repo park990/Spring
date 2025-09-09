@@ -10,7 +10,7 @@
        border:1px solid black;
        border-collapse:collapse;
        font-size:14px;
-       
+       \
    }
    
    #bbs table caption {

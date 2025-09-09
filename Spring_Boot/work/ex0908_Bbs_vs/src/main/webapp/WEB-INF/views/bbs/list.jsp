@@ -2,7 +2,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>사원 목록</title>
+    <title>게시판</title>
     <style type="text/css"> 
    #bbs table {
        width:580px;
@@ -95,7 +95,7 @@
                         ${page.totalCount-((page.nowPage-1)*page.numPerPage+vs.index)}
                     </td>
 
-            <td><a href="/view?b_idx=${vo.b_idx}&cPage=${param.cPage}&bname=${param.bname}">
+            <td><a href="/view?b_idx=${vo.b_idx}&cPage=${page.nowPage}&bname=${param.bname}">
                         ${vo.subject}
                      <c:if test="${vo.c_list!=null and vo.c_list.size()>0}">
                         <c:out value="(${vo.c_list.size()})"/>

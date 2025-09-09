@@ -60,13 +60,13 @@
     </select>
     
     <!--위에서 불러온거 업데이트로 -->
-    <update id="udt" parameterType="Map">
+    <update id="udt" parameterType="com.sist.ex0908_Bbs_vs.vo.BbsVO">
         UPDATE bbs_t
         <trim prefix="set" suffixOverrides=",">
-            subject = #{title},
+            subject = #{subject},
             content = #{content},
             writer = #{writer},
-            <if test="fname != null and fname != ''">
+            <if test="file_name != null and file_name != ''">
                 file_name = #{file_name},
                 ori_name = #{ori_name}
             </if>

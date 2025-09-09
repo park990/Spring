@@ -33,4 +33,15 @@ public class BbsSerivice {
     public int add(BbsVO vo){
        return bbsMapper.add(vo);
     }
+
+    public BbsVO getBbs(String b_idx){
+        return bbsMapper.see(b_idx);
+    }
+
+    public int hit(String b_idx){
+        return bbsMapper.hit(b_idx);
+    }
+    public int udt(BbsVO vo){
+        return bbsMapper.udt(vo);
+    }
 }
