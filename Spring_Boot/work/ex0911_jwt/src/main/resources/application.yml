@@ -1,0 +1,4 @@
+spring:
+    profiles:
+        active: dev  #활성화는 application-dev.yml 파일로 한다.
+        include: secret  #이 문서 안에 application-secret.yml파일을 포함 한다.

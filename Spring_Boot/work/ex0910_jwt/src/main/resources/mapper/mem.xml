@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="sist.ex0910_jwt.mapper.MemberMapper">
+  <select id="login" resultType="sist.ex0910_jwt.vo.MemVO"
+  parameterType="String">
+    select * from member_t where m_id=#{mid}
+  </select>
+
+  <insert id="reg" parameterType="sist.ex0910_jwt.vo.MemVO"
+  useGeneratedKeys="true" keyProperty="m_idx">
+    insert into member_t (m_id, m_pw, m_name)
+    values(#{m_id}, #{m_pw}, #{m_name})
+  </insert>
+
+</mapper>
