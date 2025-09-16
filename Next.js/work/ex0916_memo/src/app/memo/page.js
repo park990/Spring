@@ -18,7 +18,7 @@ export default function Page(){
     useEffect(()=>{     //>>> useEffect(function(){ })
         callApi();
     },[]) // [] : 현재 페이지가 열릴 때 한 번 수행한다.
-
+        
     return(
         <div className="list-bg">
             <h2>메모장</h2>
