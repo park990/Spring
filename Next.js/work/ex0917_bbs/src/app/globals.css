@@ -18,10 +18,10 @@ body {
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  /* background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale; */
 }
 
 * {
@@ -39,34 +39,4 @@ a {
   html {
     color-scheme: dark;
   }
-}
-
-.navBar{
-  background-color: #fff;
-  padding: 20px;
-}
-.navBar>a{
-  margin-right: 10px;
-  text-decoration: none;
-}
-.list-bg{
-  background: rgb(249, 250, 255);
-  padding: 10px;
-}
-.list-item{
-  background: #fff;
-  border-radius: 10px;
-  padding: 20px;
-  margin-bottom: 5px;
-  box-shadow: rgb(200, 200, 200);
-  border:3px solid silver;
-}
-.item-list-h4{
-  font-size: 20px;
-  font-weight: 800;
-  margin: 0;
-}
-.item-list-p{
-  color: #aaa;
-  margin: 5px 0px;
 }

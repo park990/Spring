@@ -7,21 +7,17 @@ function Page({params}){
 
 const {idx} = use(params);
 console.log("idx:", idx);
-const api_url=`/memo/${idx}`
+const api_url=`/memo/getMemo?idx=${idx} `
 const [vo, setVO]=useState({ });
-////
-axios.get(api_url).then(function(res){
-  console.log("res 전체:", res.data);
-  setVO(res.data.vo);
-});
-////
+
 function getData(){
 axios.get(api_url).then(function(res){
     console.log("abcdefghijk",res.data.vo)
 setVO(res.data.vo)
 })
 }
-useEffect(function() {getData()},[idx])
+
+useEffect(function() {getData();},[idx])
 
 return(
     <OneMemo memoData={vo}/>
