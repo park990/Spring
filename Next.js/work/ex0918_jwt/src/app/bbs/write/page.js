@@ -2,12 +2,16 @@
 import { Button, Divider, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
 import axios from "axios";
 import Link from "next/link";
-import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export default function Page(){
 
     // 서버 URL
-    const api_url="/das";
+    const api_url="/api/bbs/write";
+
+    const router=useRouter();
+
 
     //사용자가 입력한 값들을 하나의 객체로 저장할 곳
     const[bbs,setBbs] =useState({});  // 중괄호 대괄호 차이를 알자***********
@@ -19,10 +23,20 @@ export default function Page(){
 
 
     function sendBbs(){
-        axios.get(api_url).then(function(res){
-            // res.data.??
+        axios.post(api_url,
+            JSON.stringify(bbs),{
+                headers:{"Content-Type":"application/json"
+                }
+            }
+        ).then(function(res){
+            if(res.data.totalCount>0)
+            router.push("/bbs")
         })
     }
+
+    useEffect(function(){
+        sendBbs();
+    },[])
 
     return(
         <div style={{width:"90%",margin:"10px auto"}}>

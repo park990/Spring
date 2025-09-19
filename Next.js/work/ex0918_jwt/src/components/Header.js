@@ -1,7 +1,7 @@
 import Link from "next/link"
 
 export default function Header(){
-    const menuItem=[{title:"Home",path:"/home"},
+    const menuItem=[{title:"Home",path:"/"},
                     {title:"Members",path:"/members"},
                     {title:"Board",path:"/bbs"}]
 

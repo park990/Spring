@@ -1,4 +1,4 @@
-package com.sist.ex0918.domain.bbs.entity.service;
+package com.sist.ex0918.domain.bbs.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.stereotype.Service;
 
 import com.sist.ex0918.domain.bbs.entity.Bbs;
-import com.sist.ex0918.domain.bbs.entity.repository.BbsRepository;
+import com.sist.ex0918.domain.bbs.repository.BbsRepository;
 
 import lombok.RequiredArgsConstructor;
 

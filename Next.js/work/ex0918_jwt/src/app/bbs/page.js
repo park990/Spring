@@ -1,8 +1,31 @@
+"use client"
 import { Button, Divider, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
 import Link from "next/link";
 import styles from "../page.module.css"
+import { useState, useEffect } from "react";
+import axios from "axios";
+import BbsTR from "@/components/BbsTR";
 
 function Page(){
+    // 서버 URL
+    const api_url="/api/bbs";
+
+    // 받을 배열
+    const [list,setList]=useState([])
+
+
+    function getBbsList(){
+        axios.get(api_url).then(function(res){
+            if(res.data.totalCount>0)
+            setList(res.data.data)
+            console.log(res)
+        })
+    }
+
+    useEffect(()=>{
+        getBbsList();
+    },[])
+
     return(
         <div style={{width:"90%",margin:"10px auto"}}>
             <h2>게시판</h2>
@@ -28,13 +51,13 @@ function Page(){
                     </TableHead>
                     
                     <TableBody>
-                        <TableRow>
-                            <TableCell>1</TableCell>
-                            <TableCell>연습입니다.</TableCell>
-                            <TableCell>글쓴이</TableCell>
-                            <TableCell>2025-09-11</TableCell>
-                            <TableCell>0</TableCell>
-                        </TableRow>
+                        {list.map(function(item,i){
+                            return(
+                                <BbsTR key={i} idx={i+1} b_idx={item.b_idx} title={item.title}
+                                writer={item.writer} write_date={item.write_date} hit={item.hit}></BbsTR>
+                            )
+                        }
+                        )}
                     </TableBody>
                 </Table>
             </TableContainer>
