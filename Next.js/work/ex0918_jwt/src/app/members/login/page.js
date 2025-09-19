@@ -9,6 +9,8 @@ import { useState } from "react";
 
 function Page(){
     let router= useRouter();
+    api_url="/api/login"
+
 
     const[member, setMember]=useState({})
 
@@ -19,7 +21,7 @@ function Page(){
 
     function signIn(){
         axios.get(api_url).then(function(res){
-            const token= res.data.access_tocken;
+            const token= res.data.access_token;
 
             if(token!=null){
             router.push("/")

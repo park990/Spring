@@ -19,10 +19,10 @@ import lombok.experimental.SuperBuilder;
 @ToString(callSuper = true) // 상속받은 테이블의 함수를 사용 가능하다
 public class MemEntity extends SuperEntity{
 
-    private String id, name;
+    private String name, pid;
 
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    private String pw;
+    private String pPw;
     private String accessToken, refreshToken;
 
     
