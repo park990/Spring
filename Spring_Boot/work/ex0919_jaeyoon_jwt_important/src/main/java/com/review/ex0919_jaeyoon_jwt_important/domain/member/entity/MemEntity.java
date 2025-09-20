@@ -23,7 +23,8 @@ public class MemEntity extends SuperEntity{
 
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String pPw;
-    private String accessToken, refreshToken;
+    private String refreshToken;
+    // accesstoken은 DB에 저장하지 않는다.
 
     
 }

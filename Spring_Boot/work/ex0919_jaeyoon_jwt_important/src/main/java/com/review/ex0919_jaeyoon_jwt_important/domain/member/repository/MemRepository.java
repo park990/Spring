@@ -9,5 +9,6 @@ import com.review.ex0919_jaeyoon_jwt_important.domain.member.entity.MemEntity;
 
 @Repository
 public interface MemRepository extends JpaRepository<MemEntity,Long>{
+    
     Optional<MemEntity> findByPid(String pId);
 }
