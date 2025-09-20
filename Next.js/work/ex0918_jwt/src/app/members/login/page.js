@@ -9,7 +9,7 @@ import { useState } from "react";
 
 function Page(){
     let router= useRouter();
-    api_url="/api/login"
+    // api_url="/api/login"         
 
 
     const[member, setMember]=useState({})
@@ -28,6 +28,7 @@ function Page(){
             }
         })
     }
+
     return(
         <div style={{width:"90%",margin:"10px auto"}}>
             <h2>로그인</h2>
