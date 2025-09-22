@@ -74,7 +74,7 @@ function Page() {
                   <input
                     type="password"
                     id="u_pw"
-                    name="mpwd"
+                    name="mpw"
                     onChange={handleChange}
                   />
                 </TableCell>
