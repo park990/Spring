@@ -21,7 +21,7 @@ public class LoginControl {
     private final MemService mService;
     
     @PostMapping("/login")
-    public ResultData<AccessTokenDTO> hi(@RequestBody MemEntity insertVO){
+    public ResultData<AccessTokenDTO> hi(@RequestBody MemEntity insertVO){  
         AccessTokenDTO dto= mService.authAndGenToken(insertVO);
 
         // 프론트에서 입력한 mvo를 가지고 먼저 아이디에 해당하는 user정보가 있는지 확인한다.

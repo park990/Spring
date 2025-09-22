@@ -87,4 +87,11 @@ public class JwtProvider {
         return Jwts.parser().verifyWith(getSecretKey()).build()
                     .parseSignedClaims(token).getPayload();
     }
+
+    public String getAccessToken(Map<String,Object> map){
+        return genToken(map,60*5);
+    }
+    public String getRefreshToken(Map<String,Object> map){
+        return genToken(map,60*60*24*100);
+    }
 }
