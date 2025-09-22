@@ -60,7 +60,7 @@ public class ApiMemberControl {
     public ResultData<Member> logout() { 
         requestService.removeHeaderCookie("accessToken"); 
         requestService.removeHeaderCookie("refreshToken"); 
-         
-        return ResultData.jsonReturn(0, "logout", null); //json전달 
+         System.out.println(ResultData.jsonReturn(0,"logout", null));
+        return ResultData.jsonReturn(1, "logout", null); //json전달 
     } 
 }

@@ -2,7 +2,7 @@ import { create } from "zustand";
 
 
 const TokenStore = create((set) => ({
-  accessToken: 1,
+  accessToken: null,
   setToken(token){
     set({accessToken: token})
 

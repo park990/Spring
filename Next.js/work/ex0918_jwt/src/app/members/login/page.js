@@ -15,7 +15,7 @@ import {
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import tokenStore from "@/app/store/TokenStrore";
+import TokenStore from "@/app/store/TokenStrore";
 import axios from "axios";
 
 
@@ -24,7 +24,7 @@ function Page() {
   let router = useRouter();
 
   const [member, setMember] = useState({});
-  const {accessToken, setToken} = tokenStore();
+  const {accessToken, setToken} = TokenStore();
   const api_url = "/api/members/login";
 
   function handleChange(e) {
