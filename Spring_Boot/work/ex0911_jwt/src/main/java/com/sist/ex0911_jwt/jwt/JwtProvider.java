@@ -19,7 +19,7 @@ import io.jsonwebtoken.security.Keys;
 public class JwtProvider {
 
     @Value("${custom.jwt.secretKey}")
-    private String secretKeyCode;
+    private String secretKeyCode; // secret.yml에 입력된 코드
 
     private SecretKey secretKey;
 
@@ -44,7 +44,7 @@ public class JwtProvider {
 
         JwtBuilder jwtBuilder = Jwts.builder().subject("SIST")
                 .expiration(accessTokenExpiresIn);
-        Set<String> keys = map.keySet(); // 반족자 처리하기 위해 Set구조화
+        Set<String> keys = map.keySet(); // 반복자 처리하기 위해 Set구조화
         Iterator<String> it = keys.iterator();
 
         while (it.hasNext()) {

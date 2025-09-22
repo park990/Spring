@@ -27,8 +27,8 @@ public class MemoControl {
         return m;
     }
 
-    @RequestMapping("/{idx}")
-    public Map<String,Object> getMemo(@PathVariable String idx){
+    @RequestMapping("/getMemo")
+    public Map<String,Object> getMemo(String idx){
         System.out.println("asdfsdafsdafdfaafa::::"+idx);
         Map<String,Object> m = new HashMap<>();
         MemoVO vo = service.getMemo(idx);
