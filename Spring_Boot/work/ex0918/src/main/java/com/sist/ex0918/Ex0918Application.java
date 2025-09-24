@@ -11,6 +11,7 @@ public class Ex0918Application {
 
 	public static void main(String[] args) {
 		SpringApplication.run(Ex0918Application.class, args);
+	
 	}
 
 }
