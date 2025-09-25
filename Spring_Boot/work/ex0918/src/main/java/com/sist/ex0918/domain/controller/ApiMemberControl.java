@@ -30,10 +30,10 @@ public class ApiMemberControl {
             String msg ="fail";
             System.out.println("+++++++++++++++++++++"+member.getMid());
 
-            System.out.println("-----------------------"+member.getMpwd());
+            System.out.println("-----------------------"+member.getMpw());
 
             // JWT 생성
-            Member mem = mService.authAndMakeToken(member.getMid(), member.getMpwd());
+            Member mem = mService.authAndMakeToken(member.getMid(), member.getMpw());
             if (mem!=null){
                 ResponseCookie cookie = ResponseCookie.from(
                     "accessToken",mem.getAccessToken()).path("/") // 특정 도메인에서 사용하도록 함
