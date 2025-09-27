@@ -14,7 +14,7 @@ export default function Page(){
 
 
     //사용자가 입력한 값들을 하나의 객체로 저장할 곳
-    const[bbs,setBbs] =useState({});  // 중괄호 대괄호 차이를 알자***********
+    const[bbs,setBbs] =useState({});  // 중괄호 대괄호 차이를 알자*********** {객체},[배열]
 
     function handleChange(e){
         const {name,value} =e.target;
