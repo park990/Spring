@@ -30,3 +30,6 @@ yarn-error.log*
 .env.*
 *.properties
 *.yml
+
+# MySQL data directory
+**/db/data/

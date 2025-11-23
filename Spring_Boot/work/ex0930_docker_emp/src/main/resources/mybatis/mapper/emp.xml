@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sist.ex0930_docker_emp.mybatis.mapper.EmpMapper">
+    <!--반드시 원글의 기본키를 인자로 받아서 댓글들을 검색후 반환해야한다.-->
+    <select id="all" resultType="com.sist.ex0930_docker_emp.mybatis.vo.EmpVO">
+        select * from emp
+    </select>
+    <select id="search" resultType="com.sist.ex0930_docker_emp.mybatis.vo.EmpVO" parameterType="Map">
+        select * from emp
+        <trim prefix="where">
+            <if test="searchType!=null and searchType==0">
+                empno=#{searchValue}
+            </if>
+            <if test="searchType!=null and searchType==1">
+                ename like concat('%' #{searchValue}'%')
+            </if>
+            <if test="searchType!=null and searchType==2">
+                job like concat('%' #{searchValue}'%')
+            </if>
+            <if test="searchType!=null and searchType==1">
+                deptno =#{searchValue}
+            </if>
+        </trim>
+    </select>
+
+</mapper>

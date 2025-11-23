@@ -9,5 +9,5 @@ import lombok.Setter;
 @NoArgsConstructor 
 public class MemVO { 
 private String mid, mname; 
-private String mpwd; 
+private String mpw; 
 } 
