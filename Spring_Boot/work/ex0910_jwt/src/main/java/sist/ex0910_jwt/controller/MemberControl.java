@@ -12,7 +12,7 @@ import sist.ex0910_jwt.vo.MemVO;
 
 @RestController
 public class MemberControl {
-    
+    //jwt
     //DB 활용을 위해 
     @Autowired
     MemberService memberService;
