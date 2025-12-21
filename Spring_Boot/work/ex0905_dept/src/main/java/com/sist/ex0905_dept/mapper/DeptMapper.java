@@ -4,6 +4,7 @@ import com.sist.ex0905_dept.vo.DeptVO;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
+// env 작업 해야함  
 
 @Mapper
 public interface DeptMapper {
