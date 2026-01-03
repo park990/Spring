@@ -4,7 +4,7 @@ import axios from "axios";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-
+// 리엑트쪽 복습 필요.
 export default function Page(){
 
     // 서버 URL
